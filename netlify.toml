@@ -1,0 +1,8 @@
+[build]
+  command = "npm run production"
+  publish = "public"
+
+[[headers]]
+  for = "/fonts/*"
+    [headers.values]
+    Cache-Control = "public, max-age=15768000"

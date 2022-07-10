@@ -1,0 +1,30 @@
+---
+title: "Dana Byerly's Digital Junk Drawer"
+summary: "My digital garden is a junk drawer"
+permalink: '/feed.xml'
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ title }}</title>
+	<subtitle>{{ summary }}</subtitle>
+	<link href="{{ site.url }}{{ permalink }}" rel="self"/>
+	<link href="{{ site.url }}/"/>
+	<updated>{{ collections.blog | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+	<id>{{ site.url }}</id>
+	<author>
+    <name>{{ site.author }}</name>
+	</author>
+	{% for post in collections.blog %}
+    {% set absolutePostUrl %}{{ site.url }}{{ post.url | url }}{% endset %}
+    <entry>
+      <title>{{ post.data.title | safe }}</title>
+      <link href="{{ absolutePostUrl }}"/>
+      <updated>{{ post.data.blogDate }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content type="html"><![CDATA[
+        {{ post.data.blogContent | replace(env.CMS, site.url) | replace(env.MEDIAPATH, env.IMAGEPATH) | safe }}
+      ]]></content>
+    </entry>
+	{% endfor %}
+</feed>

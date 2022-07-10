@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "text": "Home",
+      "url": "/",
+      "id": "nav-home"
+    },
+    {
+      "text": "About",
+      "url": "/about/",
+      "id": "nav-about"
+    },
+    {
+      "text": "Blog",
+      "url": "/blog/",
+      "id": "nav-blog"
+    },
+    {
+      "text": "Links",
+      "url": "/links/",
+      "id": "nav-links"
+    },
+    {
+      "text": "RSS",
+      "url": "/feed.xml",
+      "id": "nav-rss"
+    }
+  ]
+}

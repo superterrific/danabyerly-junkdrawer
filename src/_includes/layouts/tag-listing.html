@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% set title = 'Tagged with "'  + taggy.name + '"' %}
+
+{% set css %}
+  {% include "css/global.css" %}
+{% endset %}
+
+{% block content %}
+  <article class="wrapper section-page">
+    <h1>{{ title | safe }}</h1>
+    {{ content | safe }}
+    <ul class="section-listing flow">
+      {% for posts in posts %}
+        {% if taggy.id in posts.tags %}
+          {% include 'partials/blog-summary.html' %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </article>
+{% endblock %}

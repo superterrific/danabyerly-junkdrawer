@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+
+{% set css %}
+  {% include "css/global.css" %}
+  {% include "css/content.css" %}
+{% endset %}
+
+{% block content %}
+  <article class="wrapper flow reading text-center">
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </article>
+{% endblock %}

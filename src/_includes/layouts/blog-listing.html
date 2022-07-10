@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% set css %}
+  {% include "css/global.css" %}
+{% endset %}
+
+{% block content %}
+  <article class="wrapper section-page">
+    <h1>{{ title }}</h1>
+    <div class="flow">
+      {% include "partials/blog-list.html" %}
+    </div>
+  </article>
+{% endblock %}

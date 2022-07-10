@@ -1,0 +1,10 @@
+      <ul class="post-summary-list flow">
+        {%- for posts in posts %}
+        {% include 'partials/blog-summary.html' %}
+        {% endfor -%}
+        {%- if posts | isEmpty %}
+        <p>
+          The Junk Drawer is uncharacteristically empty at the moment, sorry about that!
+        </p>
+        {% endif -%}
+      </ul>

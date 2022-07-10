@@ -1,0 +1,448 @@
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Vollkorn.woff2') format('woff2');
+}
+
+:root {
+  --color-magenta-base: #af26a1;
+  --color-magenta-dark: #8a1c7f;
+  --color-magenta-mid: #f46ee3;
+  --color-magenta-light: #f7b2eb;
+
+  --color-grey-dark: #0d0f10;
+  --color-grey-mid: #a0b1bf;
+  --color-grey-light: #dee3e8;
+
+  --color-purple-dark: #2b0d3f;
+  --color-purple-light: #dfbcf2;
+
+  --color-blue-base: #367b8d;
+  --color-blue-darkest: #08161a;
+  --color-blue-dark: #0c1e23;
+  --color-blue-mid: #53b7d1;
+  --color-blue-light: #b1deea;
+
+  --color-accent-dark: #38595c;
+  --color-accent-mid: #c7dbdd;
+  --color-accent-light: #dbe9e9;
+
+  --color-lightest: #fff;
+  --color-darkest: #000;
+
+  --base-font: Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  --headings-font: Vollkorn, sans-serif;
+
+  --step--1: clamp(0.95rem, 2.5vw, 1.05rem);
+  --step-0: clamp(1.10rem, 2.5vw, 1.31rem);
+  --step-1: clamp(1.20rem, 2.5vw, 1.64rem);
+  --step-2: clamp(1.8rem, 2.5vw, 2.05rem);
+  --step-3: clamp(1.87rem, 2.5vw, 2.56rem);
+  --step-4: clamp(2.07rem, 2.5vw, 3.20rem);
+  --step-5: clamp(2.49rem, 2.5vw, 4.01rem);
+
+  /* Light Mode  */
+  --body-bg: var(--color-accent-light);
+  --body-color: var(--color-darkest);
+  --body-weight: 400;
+  --link-color: var(--color-magenta-base);
+  --link-hover: var(--color-accent-dark);
+  --link-focus: var(--color-grey-dark);
+  --nav-current-border: var(--color-blue-base);
+  --tag-bg: var(--color-accent-mid);
+  --tag-color: var(--color-purple-dark);
+  --tag-hover-bg: var(--color-magenta-dark);
+  --tag-hover-color: var(--color-blue-light);
+  --view-posts-color: var(--color-blue-base);
+  --view-posts-hover: var(--color-magenta-base);
+  --footer-bg: var(--color-accent-mid);
+  --footer-links: var(--color-blue-dark);
+  --form-bg: var(--color-lightest);
+  --form-border: var(--body-color);
+  --disabled-bg: #ddd;
+  --disabled-text: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg: var(--color-blue-dark);
+    --body-color: var(--color-grey-light);
+    --body-weight: 300;
+    --title-color: var(--color-purple-light);
+    --link-color: var(--color-blue-mid);
+    --link-hover: var(--color-magenta-mid);
+    --link-focus: var(--color-lightest);
+    --nav-current-border: var(--color-blue-base);
+    --tag-bg: var(--color-darkest);
+    --tag-color: var(--color-purple-light);
+    --tag-hover-bg: var(--color-magenta-dark);
+    --tag-hover-color: unset;
+    --view-posts-color: var(--color-grey-mid);
+    --view-posts-hover: var(--color-purple-light);
+    --footer-bg: var(--color-blue-darkest);
+    --footer-links: var(--color-blue-mid);
+    --form-bg: var(--color-grey-dark);
+    --form-border: var(--color-blue-base);
+    --disabled-bg: #333;
+    --disabled-text: #ddd;
+  }
+
+  img {
+  filter: brightness(.85) saturate(1.15);
+  }
+}
+
+/* Resets based on Andy Bell's Modern Reset
+https://github.com/hankchizljaw/modern-css-reset/blob/master/dist/reset.css  */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html {
+  overflow-x: hidden;
+  scroll-padding-top: 1rem;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+  /* margin: 0; */
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Global ---------------------------------------------------------------- */
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-family: var(--base-font);
+  font-weight: var(--body-weight);
+  line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  background: var(--body-bg);
+  color: var(--body-color);
+}
+
+a {
+  color: var(--link-color);
+  text-underline-offset: .2rem;
+  text-decoration-thickness: .1rem;
+}
+
+a:hover {
+  background: var(--link-hover-bg);
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--link-focus);
+  outline-offset: .2rem;
+  overflow: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  font-family: Vollkorn, sans-serif;
+  letter-spacing: -.04rem;
+}
+
+article h1 {
+  font-size: var(--step-5);
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-size: var(--step-1);
+}
+
+/* Layout --------------------------------------------------------------- */
+.wrapper {
+  max-width: min(100vw - 3rem, 75ch);
+  margin-inline: auto;
+}
+
+main {
+  margin-block-start: 2rem;
+  margin-block-start: clamp(1rem, 5vw, 2.5rem);
+  margin-block-end: 3rem;
+  margin-block-end: clamp(2rem, 5vw, 5rem);
+}
+
+main:focus {
+  outline: 0;
+}
+
+/* Applies to both header and footer */
+.section-bookend {
+  max-width: min(100vw - 3rem, 90rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-inline: auto;
+  padding-block: 1rem;
+  padding-block: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+footer {
+  background: var(--footer-bg);
+  margin-block-start: auto;
+  padding-block: 1rem;
+}
+
+footer a {
+  color: var(--footer-links);
+}
+
+footer nav {
+  font-size: 1.3rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.3rem);
+}
+
+footer nav a {
+  text-decoration: none;
+}
+
+footer nav a:first-child {
+  margin-inline-end: 1rem;
+}
+
+footer h2 {
+  font-size: var(--step-0);
+  font-family: var(--font-base);
+  font-weight: 300;
+}
+
+.footer-card p {
+  margin-block: 1rem;
+  line-height: 1.7;
+}
+
+/* Header / Nav ---------------------------------------------------------- */
+.site-title span {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  letter-spacing: .05rem;
+  padding-inline-start: .1rem;
+}
+
+.site-title p {
+  font-family: Vollkorn, sans-serif;
+  font-size: 3rem;
+  font-size: clamp(2.75rem, 2.5vw, 3.5rem);
+  line-height: 1;
+  margin-block-start: .25rem;
+  margin-block-end: 1.5rem;
+  color: var(--title-color);
+}
+.site-nav {
+  align-self: center;
+}
+
+header a {
+  padding: .4rem .2rem;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav li {
+  list-style: none;
+  padding-inline-end: 1rem;
+  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+.site-nav li:last-child {
+  padding-inline-end: 0;
+}
+
+[data-state="active"] {
+  text-decoration: underline;
+  text-decoration-color: var(--nav-current-border);
+  text-decoration-thickness: 4px;
+  text-underline-offset: .5rem;
+  font-weight: 500;
+}
+
+/* Global listing and content -------------------------------------------- */
+.post-summary-list {
+  --flow-space: 3rem;
+}
+
+.post-summary-text {
+  font-size: 1.35rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.3rem);
+  margin-block: .25rem 1rem;
+}
+
+.post-meta {
+  font-size: var(--step--1);
+}
+
+.view-posts {
+  margin-block-start: 2rem;
+  margin-block-start: clamp(1.5rem, 2.5vw, 3rem);
+}
+
+.view-posts a {
+  color: var(--view-posts-color);
+  font-size: var(--step-1);
+}
+
+.view-posts a:hover {
+  color: var(--view-posts-hover);
+}
+
+.section-page h1 {
+  margin-block-end: 1rem;
+  margin-block-end: clamp(.5rem, 2.5vw, 1.5rem);
+}
+
+/* Tags -----------------------------------------*/
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-block: .75rem;
+}
+
+.tag-list > * {
+  padding-inline-end: .75rem;
+}
+
+.tag-list li {
+  margin-bottom: .5rem;
+}
+
+.tag-list a {
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  text-decoration: none;
+  padding: .35rem .5rem;
+}
+
+.tag-list a:hover {
+  background: var(--tag-hover-bg);
+  color: var(--tag-hover-color);
+}
+
+/* A11y ------------------------------------------------------------------ */
+[href="#main-content"]:not(:focus) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;	overflow:
+  hidden;	position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+[href="#main-content"] {
+  display: inline-block;
+  position: fixed;
+  left: calc(50% - 7rem);
+  overflow: auto;
+  margin: 1rem;
+  padding: 1.5rem 2rem;
+  color: var(--color-lightest);
+  background-color: var(--color-blue-dark);
+  border: 4px solid var(--color-magenta-base);
+  text-align: center;
+  font-size: 1.4rem;
+  text-decoration: none;
+  z-index: 999;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Utility --------------------------------------------------------------- */
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.splitter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}

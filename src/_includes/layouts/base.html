@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preload" href="/fonts/Vollkorn.woff2" as="font" type="font/woff2" crossorigin>
+  {% include "partials/meta.html" %}
+  <style>{{ css | cssmin | safe }}</style>
+  <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" />
+  <script defer data-domain="danabyerly-junkdrawer.website" src="https://plausible.io/js/script.outbound-links.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header>
+    {% include "partials/header.html" %}
+  </header>
+  <main id="main-content" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+  <footer>
+    {% include "partials/footer.html" %}
+  </footer>
+  {% if page.url === '/404.html' %}
+  <script>plausible("404",{ props: { path: document.location.pathname } });</script>
+  {% endif %}
+</body>
+</html>

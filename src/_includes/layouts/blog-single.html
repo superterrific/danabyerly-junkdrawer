@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+
+{% set css %}
+  {% include "css/global.css" %}
+  {% include "css/content.css" %}
+{% endset %}
+
+{% set title = posts.title.rendered %}
+
+{% block content %}
+  <article class="wrapper flow h-entry">
+    <h1 class="p-name">{{ posts.title.rendered | safe }}</h1>
+
+    {% if posts.date %}
+    <time datetime="{{ posts.date | w3Date }}" class="post-meta dt-published">{{ posts.date | longDate }}</time>
+    {% endif %}
+
+    <div class="reading flow e-content">
+      {{ posts.content.rendered | replace(env.CMS, '') | replace(env.MEDIAPATH, env.IMAGEPATH) | safe  }}
+    </div>
+    <div hidden>
+      <a href="{{ site.url }}{{ page.url }}" class="u-url">{{ posts.title.rendered | safe }}</a>
+      <p class="h-card p-author">
+        <a href="{{ site.url }}" class="p-name u-url" rel="author">{{ site.name }}</a>
+      </p>
+    </div>
+  </article>
+  <div class="wrapper post-tags">
+    {% include "partials/tags.html" %}
+  </div>
+  {% include "partials/view-all-posts.html" %}
+{% endblock %}

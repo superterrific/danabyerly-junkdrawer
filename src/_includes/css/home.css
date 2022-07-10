@@ -1,0 +1,17 @@
+.home-hero {
+  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  margin-block-start: 2rem;
+  margin-block-start: clamp(.1rem, 2.5vw, 2rem);
+  font-weight: 300;
+}
+
+.home-hero h1 {
+  margin-block-end: 1rem;
+  margin-block-end: clamp(.25rem, 2.5vw, 1rem);
+}
+
+.home-listing {
+  margin-block-start: 5rem;
+  margin-block-start: clamp(3.5rem, 5vw, 5rem);
+}

@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% set css %}
+  {% include "css/global.css" %}
+  {% include "css/home.css" %}
+{% endset %}
+
+{% block content %}
+  <div class="wrapper">
+    <section class="home-hero">
+      <h1>{{ title }}</h1>
+      <article class="reading flow">
+        {{ content | safe }}
+      </article>
+    </section>
+    <div class="home-listing">
+      {% include "partials/blog-list.html" %}
+      {% include "partials/view-all-posts.html" %}
+    </div>
+  </div>
+{% endblock %}

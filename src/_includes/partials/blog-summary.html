@@ -1,0 +1,10 @@
+          <li class="post-summary">
+            <h2><a href="/blog/{{ posts.slug }}">{{ posts.title.rendered | safe }}</a></h2>
+            <p class="post-summary-text">{{ posts.acf.summary | safe }}</p>
+            <div class="post-meta">
+              <p>
+                Published on <time datetime="{{ posts.date | w3Date }}">{{ posts.date | longDate }}
+              </time>
+            </p>
+            {% include "partials/tags.html" %}
+          </li>
