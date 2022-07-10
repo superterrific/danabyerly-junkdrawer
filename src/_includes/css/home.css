@@ -3,7 +3,6 @@
   font-size: clamp(1.3rem, 2.5vw, 1.6rem);
   margin-block-start: 2rem;
   margin-block-start: clamp(.1rem, 2.5vw, 2rem);
-  font-weight: 300;
 }
 
 .home-hero h1 {

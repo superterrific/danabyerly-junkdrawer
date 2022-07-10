@@ -6,5 +6,7 @@
                 Published on <time datetime="{{ posts.date | w3Date }}">{{ posts.date | longDate }}
               </time>
             </p>
+            {% if posts.tags | length %}
             {% include "partials/tags.html" %}
+            {% endif %}
           </li>

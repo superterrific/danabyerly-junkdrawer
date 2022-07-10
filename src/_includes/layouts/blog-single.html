@@ -25,8 +25,12 @@
       </p>
     </div>
   </article>
+
+  {% if posts.tags | length %}
   <div class="wrapper post-tags">
-    {% include "partials/tags.html" %}
+  {% include "partials/tags.html" %}
   </div>
+  {% endif %}
+
   {% include "partials/view-all-posts.html" %}
 {% endblock %}
