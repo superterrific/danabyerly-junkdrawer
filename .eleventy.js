@@ -4,6 +4,7 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const markdownIt = require('markdown-it');
 const slugify = require("slugify");
 const inspect = require("node:util").inspect;
+require("dotenv").config();
 
 // Transforms
 const htmlMinTransform = require('./src/transforms/html-min-transform.js');
@@ -31,11 +32,7 @@ module.exports = config => {
     inspect(value, {sorted: true})
   );
 
-  config.addFilter("keys", obj =>
-    Object.keys(obj).sort()
-  );
-
-  config.addGlobalData("env", require("dotenv").config().parsed);
+  config.addGlobalData("env", process.env);
 
   // Check if the array is empty and then display some helpful text
   config.addFilter('isEmpty', (value) => {

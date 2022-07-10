@@ -24,6 +24,7 @@ select,
 button {
   font-size: inherit;
   background: var(--form-bg);
+  color: var(--body-color);
 }
 
 label {
