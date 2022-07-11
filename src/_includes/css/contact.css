@@ -1,8 +1,6 @@
 
 .card-contact {
   --flow-space: 1.25rem;
-  padding-inline: 2rem;
-  padding-inline: clamp(1.5rem, 2vw, 2rem);
   margin-bottom: 4rem;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
   display: flex;
