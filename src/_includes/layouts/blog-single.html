@@ -16,7 +16,7 @@
     {% endif %}
 
     <div class="reading flow e-content">
-      {{ posts.content.rendered | replace(env.CMS, '') | replace(env.MEDIAPATH, env.IMAGEPATH) | safe  }}
+      {{ posts.content.rendered | replace(env.CMS, site.url) | replace(env.MEDIAPATH, env.IMAGEPATH) | safe  }}
     </div>
     <div hidden>
       <a href="{{ site.url }}{{ page.url }}" class="u-url">{{ posts.title.rendered | safe }}</a>
