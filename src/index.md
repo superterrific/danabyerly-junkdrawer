@@ -1,6 +1,6 @@
 ---
 title: "My Digital Garden is a Junk Drawer"
-summary: "The place to toss the junk..."
+summary: "My Digital Garden is a Junk Drawer"
 layout: 'layouts/home.html'
 pagination:
   data: posts
