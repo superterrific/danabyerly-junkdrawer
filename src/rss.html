@@ -20,7 +20,7 @@ eleventyExcludeFromCollections: true
     <entry>
       <title>{{ post.data.title | safe }}</title>
       <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.data.blogDate }}</updated>
+      <updated>{{ post.data.blogDate | w3Date }}</updated>
       <id>{{ absolutePostUrl }}</id>
       <content type="html"><![CDATA[
         {{ post.data.blogContent | replace(env.CMS, site.url) | replace(env.MEDIAPATH, env.IMAGEPATH) | safe }}
