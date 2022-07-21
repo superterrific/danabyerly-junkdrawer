@@ -10,7 +10,7 @@
   <article class="wrapper section-page">
     <h1>{{ title | safe }}</h1>
     {{ content | safe }}
-    <ul class="section-listing flow">
+    <ul class="flow">
       {% for posts in posts %}
         {% if taggy.id in posts.tags %}
           {% include 'partials/blog-summary.html' %}
