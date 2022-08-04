@@ -2,7 +2,7 @@
         <ul class="tag-list" role="list">
           {% for tag in posts.tags %}
             {% for tagName in taglist %}
-              {% if tag == tagName.id %}
+              {% if tag === tagName.id %}
               <li>
                 <a href="/tag/{{ tagName.slug }}">{{ tagName.name }}</a>
               </li>
