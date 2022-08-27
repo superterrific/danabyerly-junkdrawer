@@ -367,8 +367,7 @@ header a {
 }
 
 .section-page h1 {
-  margin-block-end: 1rem;
-  margin-block-end: clamp(.5rem, 2.5vw, 1.5rem);
+  margin-block-end: 2.5rem;
 }
 
 /* Tags -----------------------------------------*/
