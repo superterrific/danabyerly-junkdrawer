@@ -3,7 +3,7 @@
             <p class="post-summary-text">{{ posts.acf.summary | safe }}</p>
             <div class="post-meta">
               <p>
-                Published on <time datetime="{{ posts.date | w3Date }}">{{ posts.date | longDate }}
+                <time datetime="{{ posts.date | w3Date }}">{{ posts.date | longDate }}
               </time>
             </p>
             {% if posts.tags | length %}

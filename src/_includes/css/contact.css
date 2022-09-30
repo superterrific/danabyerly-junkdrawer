@@ -1,8 +1,8 @@
 
 .card-contact {
   --flow-space: 1.25rem;
-  margin-bottom: 4rem;
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-block-end: 4rem;
+  margin-block-end: clamp(2.5rem, 5vw, 4rem);
   display: flex;
   flex-direction: column;
 }
@@ -12,7 +12,7 @@
 }
 
 .card-contact form {
-  margin-bottom: .25rem;
+  margin-block-end: .25rem;
 }
 
 /* Form ------------------------------------------------------------- */
@@ -48,7 +48,8 @@ textarea {
 button {
   border: 1px solid var(--form-border);
   color: inherit;
-  padding: .5rem 1.25rem;
+  padding-block: .5rem; 
+  padding-inline: 1.25rem;
 }
 
 button:hover {
@@ -60,7 +61,6 @@ button:hover {
 button:focus {
   background: var(--body-color);
   color: var(--body-bg);
-  /* outline: 3px solid var(--color-secondary-dark); */
 }
 
 :is(button, input, textarea):disabled  {

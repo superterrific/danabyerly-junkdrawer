@@ -28,8 +28,9 @@
 
 .reading blockquote {
   border-inline-start: .5rem solid var(--color-magenta-base);
-  padding: .5rem 2rem;
-  padding: .5rem clamp(1.25rem, 2.5vw, 2rem);
+  padding-block: .5rem;
+  padding-inline: 2rem;
+  padding-inline: clamp(1.25rem, 2.5vw, 2rem);
   font-size: var(--step-1);
   font-weight: 300;
 }
@@ -80,7 +81,7 @@ details li {
 hr {
   margin-block: var(--flow-space);
   border: 0;
-  border-top: 1px solid var(--color-blue-base);
+  border-block-start: 1px solid var(--color-blue-base);
 }
 
 /* Adds flow spacing in blog posts */
@@ -90,12 +91,12 @@ hr {
 }
 
 .reading li {
-  margin-bottom: .75rem;
+  margin-block-end: .75rem;
   line-height: 1.5;
 }
 
 .reading :is(ol, ul)  {
-  margin-top: 1rem;
+  margin-block-start: 1rem;
   font-size: 1.1rem;
   font-size: clamp(1.1rem, 2.5vw, 1.2rem);
 }
@@ -106,5 +107,5 @@ hr {
 
 /* Make embedded videos easier to work with */
 .wp-block-embed iframe {
-  max-width: 100%;
+  max-inline-size: 100%;
 }
