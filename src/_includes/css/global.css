@@ -143,9 +143,9 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img {
-  max-width: 100%;
+  max-inline-size: 100%;
   display: block;
-  height: auto;
+  block-size: auto;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -169,7 +169,7 @@ body {
   font-family: var(--base-font);
   font-weight: var(--body-weight);
   line-height: 1.5;
-  min-height: 100vh;
+  min-block-size: 100vh;
   text-rendering: optimizeSpeed;
   background: var(--body-bg);
   color: var(--body-color);
@@ -238,7 +238,7 @@ main:focus {
 
 /* Applies to both header and footer */
 .section-bookend {
-  max-width: min(100vw - 3rem, 90rem);
+  max-inline-size: min(100vw - 3rem, 90rem);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -403,10 +403,10 @@ header a {
 [href="#main-content"]:not(:focus) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  height: 1px;	overflow:
+  block-size: 1px;	overflow:
   hidden;	position: absolute;
   white-space: nowrap;
-  width: 1px;
+  inline-size: 1px;
 }
 
 [href="#main-content"] {
@@ -429,7 +429,7 @@ header a {
 
 .visually-hidden {
     position: absolute;
-    width: 1px;
+    inline-size: 1px;
     clip: rect(0 0 0 0);
     overflow: hidden;
     white-space: nowrap;
