@@ -219,6 +219,10 @@ h3 {
   font-size: var(--step-1);
 }
 
+strong {
+  font-weight: 600;
+}
+
 /* Layout --------------------------------------------------------------- */
 .wrapper {
   max-inline-size: min(100vw - 3rem, 75ch);
@@ -392,11 +396,13 @@ header a {
   text-decoration: none;
   padding-block: .35rem; 
   padding-inline: .5rem;
+  outline: 1px solid transparent;
 }
 
 .tag-list a:hover {
   background: var(--tag-hover-bg);
   color: var(--tag-hover-color);
+  outline: 2px solid transparent;
 }
 
 /* A11y ------------------------------------------------------------------ */
