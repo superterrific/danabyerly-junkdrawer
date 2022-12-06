@@ -107,5 +107,11 @@ hr {
 
 /* Make embedded videos easier to work with */
 .wp-block-embed iframe {
-  max-inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+}
+
+.wp-block-embed figcaption {
+  margin-block-start: unset;
 }
