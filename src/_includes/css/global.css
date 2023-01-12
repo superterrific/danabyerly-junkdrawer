@@ -199,7 +199,7 @@ h4,
 h5,
 h6 {
   line-height: 1.15;
-  font-family: Vollkorn, sans-serif;
+  font-family: var(--headings-font);
   letter-spacing: -.04rem;
 }
 
@@ -296,7 +296,7 @@ footer h2 {
 }
 
 .site-title p {
-  font-family: Vollkorn, sans-serif;
+  font-family: var(--headings-font);
   font-size: 3rem;
   font-size: clamp(2.75rem, 2.5vw, 3.5rem);
   line-height: 1;
