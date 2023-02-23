@@ -60,11 +60,6 @@ module.exports = config => {
   // Plugins
   config.addPlugin(rssPlugin);
 
-  // Open the browser on launch
-  config.setBrowserSyncConfig({
-    open: true
-  });
-
   // Fine tune Slugify - would like to figure out customReplacements
   config.addFilter("slugify", (input) => {
     const options = {
