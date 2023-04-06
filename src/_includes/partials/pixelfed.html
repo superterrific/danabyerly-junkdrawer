@@ -1,0 +1,13 @@
+{% for item in pixelfed | limit(1) %}
+<article class="card-pixelfed">
+  <h2>Latest from Pixelfed...</h2>
+  {{ item.content | safe }}
+  <p class="pixelfed-cta">
+    <a href="https://pixelfed.social/superterrific">View at Pixelfed</a>
+  </p>
+</article>
+{% endfor %}
+
+{% if pixelfed | isEmpty %}
+<p>Hmm, looks like something went wrong. Sorry!</p>
+{% endif %}

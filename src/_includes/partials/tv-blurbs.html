@@ -1,0 +1,17 @@
+  <li>
+    <{{ headingLevel if headingLevel else 'h2' }}>{{ item.title }}</{{ headingLevel if headingLevel else 'h2' }}>
+    <p class="post-meta">{{ item.episode | upper }}</p>
+    {% if item.spoiler %}
+    <details class="spoiler">
+      <summary>
+        <span class="spoiler-text">Spoiler alert!</span>
+      </summary>
+      <p class="post-summary-text-sm">{{ item.blurb }} </p>
+    </details>
+    {% else %}
+    <p class="post-summary-text-sm">{{ item.blurb }}</p>
+    {% endif %}
+  </li>
+    
+
+    
