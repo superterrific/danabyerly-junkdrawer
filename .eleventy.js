@@ -39,6 +39,24 @@ module.exports = config => {
     return Array.isArray(value) && value.length === 0;
   });
 
+  // Limit amount of posts displayed
+  config.addFilter('limit', function (arr, limit) {
+    return arr.slice(0, limit);
+  });
+
+  // Sort recently added items by date added
+  config.addFilter("sortByNewest", arr => {
+    arr.sort((b, a) => (a.date) > (b.date) ? 1 : -1);
+    return arr;
+  });
+
+  // Sort recently added blurbs
+  config.addFilter("sortBlurbs", arr => {
+    arr.sort((b, a) => (a.ID) > (b.ID) ? 1 : -1);
+    return arr;
+  });
+
+
   // Minify
   config.addFilter('cssmin', function(code) {
     return new CleanCSS({}).minify(code).styles;

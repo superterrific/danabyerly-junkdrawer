@@ -1,21 +1,62 @@
 {% extends "layouts/base.html" %}
 
+{% set headingLevel = 'h3' %}
+
 {% set css %}
-  {% include "css/global.css" %}
-  {% include "css/home.css" %}
+{% include "css/global.css" %}
+{% include "css/home.css" %}
 {% endset %}
 
 {% block content %}
-  <div class="wrapper">
-    <section class="home-hero">
+
+<div class="wrapper sidebar section-hero">
+  <div class="sidebar-left section-hero-inner flow">
+    <div class="hero-content">
       <h1>{{ title }}</h1>
-      <article class="reading flow">
-        {{ content | safe }}
-      </article>
-    </section>
-    <div class="home-listing">
-      {% include "partials/blog-list.html" %}
-      {% include "partials/view-all-posts.html" %}
+      <p>{{ content | safe }}</p>
+    </div>
+    <div class="section-wakeup flow">
+      {% for item in songs | sortByNewest | limit(1) %}
+      <h2>
+        I woke up with this song in my head on <time datetime="{{ item.date | w3Date }}">{{ item.date | longDate }}</time>
+      </h2>
+      <p>
+        <strong>{{ item.song }}</strong> by {{ item.artist }} &mdash; <a href="{{ item.link }}">Listen at {{ item.source}}</a>
+      </p>
+      {% endfor %}
+      <p>
+        <a href="/wake-up-songs/">All Wake Up Songs</a>
+      </p>
     </div>
   </div>
+  <div class="sidebar-right section-pixelfed">
+    {% include "partials/pixelfed.html" %}
+  </div>
+</div>
+
+<div class="section-writing">
+  <div class="wrapper splitter section-writing-inner">
+    <div class="section-blog flow">
+      <h2>Latest from the Blog...</h2>
+      {% include "partials/blog-list.html" %}
+      <p class="writing-view-all">
+        <a href="/blog/">All Posts</a>
+      </p>
+    </div>
+    <div class="section-blurbs flow">
+      <div>
+        <h2>TV Blurbs...</h2>
+        Thoughts about what I'm currently watching.
+      </div>
+      <ul class="post-summary-list flow">
+        {% for item in blurbs | sortBlurbs | limit(3) %}
+        {% include "partials/tv-blurbs.html" %}
+        {% endfor %}
+      </ul>
+      <p class="writing-view-all">
+        <a href="/tv-blurbs/">All TV Blurbs</a>
+      </p>
+    </div>
+  </div>
+</div>
 {% endblock %}

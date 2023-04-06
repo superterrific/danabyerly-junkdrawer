@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+
+{% set css %}
+{% include "css/global.css" %}
+{% endset %}
+
+{% block content %}
+<article class="wrapper section-page">
+  <h1>{{ title }}</h1>
+  <div class="flow">
+    <span class="post-summary-text flow">
+      {{ content | safe }}
+    </span>
+    <ul class="post-summary-list flow">
+      {% for item in songs | sortByNewest %}
+      <li>
+        <h2>
+          <time datetime="{{ item.date | w3Date }}">{{ item.date | longDate }}</time>
+        </h2>
+        <p class="post-summary-text-sm">
+          <strong>{{ item.song }}</strong> by {{ item.artist }}
+        </p>
+        <p>
+          <a href="{{ item.link }}">Listen at {{ item.source}}</a>
+        </p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</article>
+{% endblock %}

@@ -1,16 +1,131 @@
-.home-hero {
-  font-size: 1.3rem;
-  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
-  margin-block-start: 2rem;
-  margin-block-start: clamp(.1rem, 2.5vw, 2rem);
+@font-face {
+  font-family: 'ShantellSans';
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/shantellsans-semibold.woff2') format('woff2');
 }
 
-.home-hero h1 {
+main {
+  margin-block-end: unset;
+}
+
+/* Hero ----------------------------------------- */
+.section-hero {
+  --wrapper:90rem;
+  margin-block-end: 12rem;
+  margin-block-end: clamp(6rem, 6vw, 12rem);
+}
+
+.section-hero-inner {
+  --sidebar-width: 40rem;
+  margin-block-start: 2rem;
+  margin-block-start: clamp(1rem, 5vw, 5rem);
+}
+.hero-content {
+  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 5vw, 1.6rem);
+}
+
+.hero-content h1 {
   margin-block-end: 1rem;
   margin-block-end: clamp(.25rem, 2.5vw, 1rem);
 }
 
-.home-listing {
-  margin-block-start: 5rem;
-  margin-block-start: clamp(3.5rem, 5vw, 5rem);
+/* Sections ------------------------------------- */
+.section-wakeup {
+  --flow-space: 1rem;
+  margin-block-start: 6rem;
+  margin-block-start: clamp(4rem, 6vw, 6rem);
+  padding-inline-start: 1rem;
+  border-left: .75rem double var(--wakeup-border);
+}
+
+.section-wakeup h2 {
+  font-size: var(--step-1);
+  max-width: 28ch;
+}
+
+.section-writing {
+  --wrapper: 70rem;
+  background: var(--writing-bg-color);  padding-block: 2rem;
+  padding-block: clamp(3.5rem, 5vw, 5rem);
+  border-top: 5px solid var(--writing-border);
+  background-image: var(--writing-bg-img);
+}
+
+.section-writing-inner {
+  --splitter-gap: 5rem;
+}
+
+.writing-view-all a {
+  color: var(--writing-view-all);
+}
+
+.section-blog {
+  min-width: 40%;
+}
+
+.tag-list a {
+  --tag-bg: var(--home-tag);
+}
+
+.section-blog li,
+.section-blurbs li {
+  max-width: 28rem;
+}
+
+/* Pixelfed ------------------------------------- */
+.section-pixelfed {
+  min-width: 45%;
+}
+.card-pixelfed {
+  background: white;
+  color: black;
+  border: 1px solid black;
+  max-width: 30rem;
+  padding: 1rem 1.5rem 3rem;
+  padding-inline: clamp(1rem, 2.5vw, 1.5rem);
+  padding-block-start: clamp(.5rem, 2.5vw, 1rem);
+  padding-block-end: clamp(2rem, 2.5vw, 3rem);
+  margin-inline: auto;
+  transform: rotate(-3deg);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Maybe also use the felt tip pen font face? */
+.card-pixelfed h2 {
+  margin-block-end: .5rem;
+  font-size: var(--step-1);
+  font-family: ShantellSans, var(--headings-font);
+}
+
+.card-pixelfed img {
+  border: 2px solid var(--color-darkest);
+}
+
+/* Ugh, overriding inline padding from Pixelfed's RSS feed */
+.card-pixelfed p {
+  margin-inline-start: -10px !important;
+  font-weight: 400;
+}
+
+.card-pixelfed a {
+  color: var(--color-magenta-base);
+}
+
+.card-pixelfed a:focus {
+  outline: 2px solid var(--color-blue-base);
+  outline-offset: .2rem;
+}
+
+/* Add more space between hashtags coming from Pixelfed */
+.hashtag {
+  display: inline-block;
+  margin-inline-end: .5rem;
+}
+
+.pixelfed-cta {
+  font-size: 1.3rem;
+  text-align: end;
 }

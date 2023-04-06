@@ -3,11 +3,26 @@
     <span>Dana Byerly's</span>
     <p>Digital Junk Drawer</p>
   </div>
-  <nav class="site-nav" aria-label="Primary">
-    <ul role="list">
-     {% for item in navigation.items %}
-     <li id="{{ item.id }}"><a href="{{ item.url }}"{{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{ item.text }}</a></li>
-     {% endfor %}
-     </ul>
-  </nav>
+  <div class="site-nav">
+    <nav class="site-nav-primary" aria-label="Primary">
+      <ul role="list">
+        {% for item in navigation.items %}
+        <li id="{{ item.id }}">
+          <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>{{
+            item.text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <nav class="site-nav-secondary" aria-label="Secondary">
+      <ul list="role">
+        <li>
+          <a href="/tv-blurbs/"{% if '/tv-blurbs' in page.url %} data-state="active"{% endif %}>TV Blurbs</a>
+        </li>
+        <li>
+          <a href="/wake-up-songs/"{% if '/wake-up-songs' in page.url %} data-state="active"{% endif %}>Wake Up Songs</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>

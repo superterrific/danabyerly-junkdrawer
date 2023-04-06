@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+
+{% set css %}
+  {% include "css/global.css" %}
+{% endset %}
+
+{% block content %}
+  <article class="wrapper section-page flow">
+    <h1>{{ title }}</h1>
+    <span class="post-summary-text">
+      {{ content | safe }}
+    </span>
+    <ul class="post-summary-list flow">
+      {% for item in blurbs | sortBlurbs %}
+      {% include "partials/tv-blurbs.html" %}
+      {% endfor %}
+    </ul>
+  </article>
+{% endblock %}
