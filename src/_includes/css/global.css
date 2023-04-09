@@ -374,8 +374,8 @@ header a {
 
 /* Global listing and content -------------------------------------------- */
 .post-summary-list {
-  --flow-space: 4rem;
-  --flow-space: clamp(3rem, 2.5vw, 4rem);
+  --flow-space: 3rem;
+  --flow-space: clamp(2.5rem, 2.5vw, 4rem);
 }
 
 .post-summary-text {
