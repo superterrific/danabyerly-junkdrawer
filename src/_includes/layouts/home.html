@@ -44,10 +44,7 @@
       </p>
     </div>
     <div class="section-blurbs flow">
-      <div>
-        <h2>TV Blurbs...</h2>
-        Thoughts about what I'm currently watching.
-      </div>
+      <h2>TV Blurbs...</h2>
       <ul class="post-summary-list flow">
         {% for item in blurbs | sortBlurbs | limit(3) %}
         {% include "partials/tv-blurbs.html" %}
