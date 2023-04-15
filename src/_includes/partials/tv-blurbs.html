@@ -2,7 +2,7 @@
     <{{ headingLevel if headingLevel else 'h2' }}>{{ item.title }}</{{ headingLevel if headingLevel else 'h2' }}>
     <p class="post-meta">{{ item.episode | upper }}</p>
     {% if item.spoiler %}
-    <details class="spoiler plausible=Spoiler+Alert">
+    <details class="spoiler plausible-event-name=Spoiler+alert">
       <summary>
         <span class="spoiler-text">Spoiler alert!</span>
       </summary>
