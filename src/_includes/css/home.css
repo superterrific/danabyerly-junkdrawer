@@ -62,10 +62,6 @@ main {
   color: var(--writing-view-all);
 }
 
-.section-blog {
-  min-width: 40%;
-}
-
 .tag-list a {
   --tag-bg: var(--home-tag);
 }
