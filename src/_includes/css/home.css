@@ -90,7 +90,6 @@ main {
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Maybe also use the felt tip pen font face? */
 .card-pixelfed h2 {
   margin-block-end: .5rem;
   font-size: var(--step-1);
