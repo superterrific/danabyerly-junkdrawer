@@ -56,7 +56,6 @@ module.exports = config => {
     return arr;
   });
 
-
   // Minify
   config.addFilter('cssmin', function(code) {
     return new CleanCSS({}).minify(code).styles;

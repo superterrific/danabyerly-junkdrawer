@@ -2,6 +2,7 @@
 
 {% set css %}
 {% include "css/global.css" %}
+{% include "css/wake-up-songs.css" %}
 {% endset %}
 
 {% block content %}
@@ -11,17 +12,17 @@
     <span class="post-summary-text flow">
       {{ content | safe }}
     </span>
-    <ul class="post-summary-list flow">
+    <ul class="song-summary-list flow">
       {% for item in songs | sortByNewest %}
       <li>
-        <h2>
+        <h2 class="song-header">
           <time datetime="{{ item.date | w3Date }}">{{ item.date | longDate }}</time>
         </h2>
-        <p class="post-summary-text-sm">
-          <strong>{{ item.song }}</strong> by {{ item.artist }}
+        <p class="song-title">
+          {{ item.song }}
         </p>
         <p>
-          <a href="{{ item.link }}">Listen at {{ item.source}}</a>
+          <span class="visually-hidden">by </span>{{ item.artist }} &mdash; <a href="{{ item.link }}">Listen at {{ item.source}}</a>
         </p>
       </li>
       {% endfor %}

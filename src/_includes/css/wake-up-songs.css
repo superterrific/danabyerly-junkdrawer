@@ -1,0 +1,18 @@
+.song-summary-list {
+  --flow-space: 4rem;
+  --flow-space: clamp(3.5rem, 2.5vw, 5rem);
+}
+
+h2 {
+  font-family: unset;
+  font-size: var(--step--1);
+  font-weight: 400;
+}
+
+.song-title {
+  font-family: var(--headings-font);
+  font-size: var(--step-3);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-block: .5rem .1rem;
+}
