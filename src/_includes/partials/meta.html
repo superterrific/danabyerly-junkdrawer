@@ -1,5 +1,6 @@
 {%- set pageTitle = title + ' - ' + site.name -%}
 {%- set siteDescription = site.siteDescription -%}
+{%- set metaTitle = title -%}
 
 {# No title duplication #}
 {%- if site.name === title -%}
@@ -16,19 +17,10 @@
 {%- set currentUrl = site.url + page.url -%}
 {%- set socialImage = site.url + site.socialImage -%}
 
-{# Use page specific title or description using keys metaTitle and/or metaDesc #}
-{%- if metaTitle -%}
-{%- set pageTitle = metaTitle -%}
-{%- endif -%}
-
-{%- if not metaDesc -%}
-{%- set metaDesc = summary | safe -%}
-{%- endif -%}
-
 <title>{{ pageTitle | safe }}</title>
 <link rel="canonical" href="{{ currentUrl }}" />
 <meta property="og:site_name" content="{{ siteTitle }}" />
-<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:title" content="{{ metaTitle }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ currentUrl }}" />
 <meta property="og:image" content="{{ socialImage }}" />
