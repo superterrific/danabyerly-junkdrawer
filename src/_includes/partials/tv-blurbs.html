@@ -1,6 +1,11 @@
   <li>
     <{{ headingLevel if headingLevel else 'h2' }}>{{ item.title }}</{{ headingLevel if headingLevel else 'h2' }}>
-    <p class="post-meta">{{ item.episode | upper }}</p>
+    <div class="post-meta blurb-meta">
+      {% if item.episode %}
+      <p>{{ item.episode | upper }}</p> 
+      {% endif %}
+      <p>{{ item.country }}</p>
+    </div>
     {% if item.spoiler %}
     <details class="spoiler plausible-event-name=Spoiler+alert">
       <summary>

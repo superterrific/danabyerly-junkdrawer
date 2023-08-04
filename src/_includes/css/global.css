@@ -426,6 +426,12 @@ header a {
   margin-block: .5rem
 }
 
+.blurb-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 /* Tags ------------------------------------------------------------------ */
 .tag-list {
   display: flex;
