@@ -35,13 +35,20 @@
   font-weight: 300;
 }
 
+/* Class selector is a work around for WP quote block that incorrectly uses a cite element within blockquote */
+.cite,
 cite {
   font-style: normal;
   font-size: var(--step--1);
 }
 
+.cite::before,
 cite::before {
   content: '– '
+}
+
+.cite {
+  margin-block-start: .75rem;
 }
 
 figure {

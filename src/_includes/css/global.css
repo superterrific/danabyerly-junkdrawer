@@ -426,12 +426,6 @@ header a {
   margin-block: .5rem
 }
 
-.blurb-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
 /* Tags ------------------------------------------------------------------ */
 .tag-list {
   display: flex;
@@ -514,6 +508,12 @@ header a {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--splitter-gap, 1rem);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--flex-gap, 1rem);
 }
 
 .text-center {

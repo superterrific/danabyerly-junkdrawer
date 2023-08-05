@@ -1,6 +1,6 @@
   <li>
     <{{ headingLevel if headingLevel else 'h2' }}>{{ item.title }}</{{ headingLevel if headingLevel else 'h2' }}>
-    <div class="post-meta blurb-meta">
+    <div class="flex post-meta">
       {% if item.episode %}
       <p>{{ item.episode | upper }}</p> 
       {% endif %}
