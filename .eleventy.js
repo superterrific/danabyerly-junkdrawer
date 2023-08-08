@@ -68,6 +68,7 @@ module.exports = config => {
   // Set directories to pass through to the public folder
   config.addPassthroughCopy('./src/img/');
   config.addPassthroughCopy('./src/fonts/');
+  config.addPassthroughCopy('./src/robots.txt');
 
   // Collections
   config.addCollection("blog", function (collection) {
