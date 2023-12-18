@@ -69,6 +69,7 @@ module.exports = config => {
   config.addPassthroughCopy('./src/img/');
   config.addPassthroughCopy('./src/fonts/');
   config.addPassthroughCopy('./src/robots.txt');
+  config.addPassthroughCopy('./src/js/');
 
   // Collections
   config.addCollection("blog", function (collection) {

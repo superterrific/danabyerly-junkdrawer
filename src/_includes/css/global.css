@@ -71,6 +71,8 @@
   --writing-border: var(--color-blue-base);
   --home-tag: var(--color-blue-mid);
   --writing-view-all: var(--color-magenta-dark);
+  --snow-fall-color: #9dc0c3;
+  --snow-fall-size: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,6 +103,7 @@
     --writing-border: var(--color-blue-darkest);
     --home-tag: var(--color-blue-darkest);
     --writing-view-all: var(--link-color);
+    --snow-fall-color: unset;
   }
 
   img {
