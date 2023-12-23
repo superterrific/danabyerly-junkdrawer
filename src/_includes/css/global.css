@@ -219,6 +219,7 @@ h6 {
   line-height: 1.15;
   font-family: var(--headings-font);
   letter-spacing: -.05rem;
+  text-wrap: balance;
 }
 
 article h1 {
