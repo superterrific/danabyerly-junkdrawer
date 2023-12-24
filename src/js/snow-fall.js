@@ -14,7 +14,7 @@ class Snow extends HTMLElement {
 :host([mode="element"]) {
 	display: block;
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden; this clips the Pixelfed when set on the hero area
 }
 :host([mode="page"]) {
 	position: fixed;
