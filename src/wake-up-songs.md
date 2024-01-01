@@ -4,6 +4,6 @@ summary: "Sometimes I wake up a with a song in my head."
 layout: 'layouts/wake-up-songs.html'
 ---
 
-I had a couple of days where I noticed that whatever song was in my head when I woke up seemed so random. I hadn’t heard it or thought of it in a while, yet there it was. For fun I started to track them. 
+I record whatever song is in my head when I wake up. Please enjoy the random playlist of my unconscious!
 
-Please enjoy the random playlist of my unconscious.
+[2023 Wake Up Song recap](/blog/wake-up-songs-2023/).
