@@ -8,7 +8,12 @@
   <article class="wrapper section-page">
     <h1>{{ title }}</h1>
     <div class="flow">
-      {% include "partials/blog-list.html" %}
+      <ul class="post-summary-list flow">
+        {% for posts in posts %}
+        {% include 'partials/blog-summary.html' %}
+        {% endfor %}
+        {% include 'partials/blog-list-empty-text.html' %}
+      </ul>
     </div>
   </article>
 {% endblock %}

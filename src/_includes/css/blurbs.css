@@ -1,0 +1,51 @@
+.blurb-summary-list {
+  --flow-space: 4rem;
+  --flow-space: clamp(3.5rem, 2.5vw, 5rem);
+  margin-block-start: 2rem;
+}
+
+article {
+  --flow-space: .5rem;
+}
+
+.series-marker {
+  color: var(--series-marker);
+  font-family: var(--headings-font);
+  font-size: var(--step-3);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-block-end: .5rem;
+}
+
+.show-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 4rem;
+}
+
+.show-nav ul {
+  --flex-gap: 1.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+[aria-label="All shows"] a {
+  background: var(--tag-bg);
+  border-radius: .5rem;
+  color: var(--tag-color);
+  outline: 1px solid var(--link-color);
+  padding-block: .4rem; 
+  padding-inline: .5rem;
+  text-decoration: none;
+}
+
+[aria-label="All shows"] a:hover {
+  background: var(--tag-hover-bg);
+  color: var(--tag-hover-color);
+}
+
+[aria-label="All shows"] a:focus-visible {
+  outline: 3px solid var(--link-focus);
+  outline-offset: .2rem;
+}

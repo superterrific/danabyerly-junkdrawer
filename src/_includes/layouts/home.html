@@ -37,7 +37,12 @@
   <div class="wrapper splitter section-writing-inner">
     <div class="section-blog flow">
       <h2>Latest from the Blog...</h2>
-      {% include "partials/blog-list.html" %}
+      <ul class="post-summary-list flow">
+        {% for posts in posts | limit (3) %}
+        {% include 'partials/blog-summary.html' %}
+        {% endfor %}
+        {% include 'partials/blog-list-empty-text.html' %}
+      </ul>
       <p class="writing-view-all">
         <a href="/blog/">All Posts</a>
       </p>

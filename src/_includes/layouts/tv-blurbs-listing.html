@@ -2,6 +2,7 @@
 
 {% set css %}
   {% include "css/global.css" %}
+  {% include "css/blurbs.css" %}
 {% endset %}
 
 {% block content %}
@@ -11,9 +12,10 @@
       {{ content | safe }}
     </span>
     <ul class="post-summary-list flow">
-      {% for item in blurbs | sortBlurbs %}
+      {% for item in blurbs | sortBlurbs | limit(10) %}
       {% include "partials/tv-blurbs.html" %}
       {% endfor %}
     </ul>
+    {% include "partials/all-shows-links.html" %}
   </article>
 {% endblock %}
