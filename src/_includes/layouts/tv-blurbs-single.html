@@ -1,0 +1,45 @@
+{% extends "layouts/base.html" %}
+
+{% set css %}
+  {% include "css/global.css" %}
+  {% include "css/blurbs.css" %}
+{% endset %}
+
+{% block content %}
+  <article class="wrapper">
+    <h1>{{ title }}</h1>
+    <div> 
+      {% if original %}<span lang="{{ language }}">{{ original }}</span>{% if original2 %}/<span lang="{{ language2 }}">{{ original2 }}</span>{% endif %}, {% endif %}{{ country }}{% if type === 'Film' %}, {{ type }}{% endif %}
+    </div>
+    <ul class="blurb-summary-list flow">
+      {% for item in blurbs | reverse %}
+      {% if item.title === title %}
+      <li>
+        {% if item.type == "Series" %}
+        {% if item.marker %}
+        {% set headingLevel = 'h3' %}
+        <h2 class="series-marker">{% if item.country === "United States" %}Season {% else %}Series {% endif %}
+        {{ item.series }}</h2>
+        {% endif %}
+        <{{ headingLevel if headingLevel else 'h2' }} id="s{{ item.series }}-e{{ item.episode }}">
+          S{{ item.series }} E{{ item.episode }} 
+        </{{ headingLevel if headingLevel else 'h2' }}>
+        {% endif %}
+        {% if item.spoiler %}
+        <details class="spoiler plausible-event-name=Spoiler+alert">
+          <summary>
+            <span class="spoiler-text">Spoiler alert!</span>
+          </summary>
+          <p class="post-summary-text-sm">{{ item.blurb }} </p>
+        </details>
+        {% else %}
+        <p class="post-summary-text-sm">{{ item.blurb }}</p>
+      </li>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </article>
+  
+   {% include "partials/all-shows-links.html" %}
+{% endblock %}
