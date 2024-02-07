@@ -8,9 +8,9 @@
 {% block content %}
   <article class="wrapper">
     <h1>{{ title }}</h1>
-    <div> 
+    <p class="post-meta"> 
       {% if original %}<span lang="{{ language }}">{{ original }}</span>{% if original2 %}/<span lang="{{ language2 }}">{{ original2 }}</span>{% endif %}, {% endif %}{{ country }}{% if type === 'Film' %}, {{ type }}{% endif %}
-    </div>
+    </p>
     <ul class="blurb-summary-list flow">
       {% for item in blurbs | reverse %}
       {% if item.title === title %}

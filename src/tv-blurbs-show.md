@@ -1,5 +1,5 @@
 ---
-layout: 'layouts/tv-blurbs-single.html'
+layout: "layouts/tv-blurbs-single.html"
 pagination:
   data: shows
   size: 1

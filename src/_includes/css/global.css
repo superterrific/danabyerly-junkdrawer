@@ -35,7 +35,7 @@
   --base-font: "Helvetica Neue", Helvetica, "Segoe UI", sans-serif;
   --headings-font: Vollkorn, sans-serif;
 
-  --step--1: clamp(0.95rem, 3vw, 1.05rem);
+  --step--1: clamp(1rem, 3vw, 1.05rem);
   --step-0: clamp(1.2rem, 3vw, 1.31rem);
   --step-1: clamp(1.5rem, 3vw, 1.64rem);
   --step-2: clamp(1.8rem, 3vw, 2.05rem);
