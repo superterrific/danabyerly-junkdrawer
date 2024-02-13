@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Vollkorn';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100 800;
   font-display: swap;
   src: url('/fonts/Vollkorn.woff2') format('woff2');
 }
@@ -220,6 +220,7 @@ h5,
 h6 {
   line-height: 1.15;
   font-family: var(--headings-font);
+  font-weight: 600;
   letter-spacing: -.05rem;
   text-wrap: balance;
 }
