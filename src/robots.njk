@@ -1,0 +1,8 @@
+---
+permalink: '/robots.txt'
+---
+{%- for item in robots -%}
+User-agent: {{ item.robot }} 
+Disallow: /
+
+{% endfor %}
