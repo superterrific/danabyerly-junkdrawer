@@ -10,22 +10,23 @@
     <h1>{{ title }}</h1>
     {{ content | safe }}
     {% if page.url === '/contact/' %}
-    <form name="Contact" method="post" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" class="flow">
+    <form 
+    name="Contact" method="post" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" class="flow">
       <div class="field-wrap">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" pattern="[A-Za-z ]{1,100}" autocomplete="on" required />
       </div>
       <div class="field-wrap">
-        <label for="emailhaha">Email</label>
-        <input type="text" name="emailhaha" id="emailhaha" autocapitalize="none" pattern="[^@]+@[^\.]+\..+" autocomplete="on" required />
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" autocapitalize="none" pattern="[^@]+@[^\.]+\..+" autocomplete="on" required />
       </div>
       <div class="field-wrap">
         <label for="message">Message</label>
         <textarea name="message" id="message" rows="8" required></textarea>
       </div>
       <span>
-        <label aria-hidden="true" class="visually-hidden" for="Email">Don’t fill this out if you’re human</label>
-        <input id="email" style="display:none" name="email" />
+        <label aria-hidden="true" class="visually-hidden" for="important">Don’t fill this out if you’re human</label>
+        <input id="important" style="display:none" name="important" />
       </span>
       <button type="submit">Send</button>
     </form>
