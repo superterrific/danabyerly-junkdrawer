@@ -11,10 +11,6 @@
     {{ content | safe }}
     {% if page.url === '/contact/' %}
     <form name="Contact" method="post" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" class="flow">
-      
-      <label aria-hidden="true" class="visually-hidden" for="bot-field">Don’t fill this out if you’re human</label>
-      <input id="bot-field" style="display:none" name="bot-field" />
-      
       <div class="field-wrap">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" pattern="[A-Za-z ]{1,100}" autocomplete="on" required />
@@ -27,6 +23,10 @@
         <label for="message">Message</label>
         <textarea name="message" id="message" rows="8" required></textarea>
       </div>
+      <span>
+        <label aria-hidden="true" class="visually-hidden" for="bot-field">Don’t fill this out if you’re human</label>
+        <input id="bot-field" style="display:none" name="bot-field" />
+      </span>
       <button type="submit">Send</button>
     </form>
     {% else %}
