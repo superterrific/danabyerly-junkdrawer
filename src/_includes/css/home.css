@@ -48,7 +48,8 @@ main {
 
 .section-writing {
   --wrapper: 70rem;
-  background: var(--writing-bg-color);  padding-block: 2rem;
+  background: var(--writing-bg-color);  
+  padding-block: 2rem;
   padding-block: clamp(3.5rem, 5vw, 5rem);
   border-top: 5px solid var(--writing-border);
   background-image: var(--writing-bg-img);

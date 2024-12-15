@@ -72,7 +72,7 @@
   --home-tag: var(--color-blue-mid);
   --writing-view-all: var(--color-magenta-dark);
   --series-marker: var(--color-magenta-base);
-  --snow-fall-color: #9dc0c3;
+  --snow-fall-color: var(--color-blue-mid);
   --snow-fall-size: 16px;
 }
 
