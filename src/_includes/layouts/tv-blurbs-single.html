@@ -18,7 +18,7 @@
         {% if item.type == "Series" %}
         {% if item.marker %}
         {% set headingLevel = 'h3' %}
-        <h2 class="series-marker">{% if item.country === "United States" %}Season {% else %}Series {% endif %}
+        <h2 id="s{{ item.series }}" class="series-marker">{% if item.country === "United States" %}Season {% else %}Series {% endif %}
         {{ item.series }}</h2>
         {% endif %}
         <{{ headingLevel if headingLevel else 'h2' }} id="s{{ item.series }}-e{{ item.episode }}">
