@@ -8,9 +8,6 @@
 {% block content %}
   <article class="wrapper flow card-contact">
     <h1>{{ title }}</h1>
-    {{ content | safe }}
-    
-    {% include "partials/contact-form.html" %}
-   
+    {{ content | safe }}   
   </article>
 {% endblock %}
