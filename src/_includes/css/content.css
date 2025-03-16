@@ -108,6 +108,10 @@ hr {
   font-size: clamp(1.1rem, 2.5vw, 1.2rem);
 }
 
+.reading li > ul {
+  margin-block-start: .25rem;
+}
+
 .reading li p {
   line-height: 1.3;
 }
