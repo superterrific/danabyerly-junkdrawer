@@ -9,7 +9,7 @@
   <article class="wrapper">
     <h1>{{ title }}</h1>
     <p class="post-meta"> 
-      {% if original %}<span lang="{{ language }}">{{ original }}</span>{% if original2 %}/<span lang="{{ language2 }}">{{ original2 }}</span>{% endif %}, {% endif %}{{ country }}{% if type === 'Film' %}, {{ type }}{% endif %}
+      {% if original %}<span lang="{{ language }}">{{ original | safe }}</span>{% if original2 %}/<span lang="{{ language2 }}">{{ original2 | safe }}</span>{% endif %}, {% endif %}{{ country }}{% if type === 'Film' %}, {{ type }}{% endif %}
     </p>
     <ul class="blurb-summary-list flow">
       {% for item in blurbs | reverse %}
