@@ -6,9 +6,6 @@ const slugify = require("slugify");
 const inspect = require("node:util").inspect;
 require("dotenv").config();
 
-// Transforms
-const htmlMinTransform = require('./src/transforms/html-min-transform.js');
-
 // Create production flag
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -60,10 +57,6 @@ module.exports = config => {
   config.addFilter('cssmin', function(code) {
     return new CleanCSS({}).minify(code).styles;
   });
-
-  if (isProduction) {
-    config.addTransform('htmlmin', htmlMinTransform);
-  }
 
   // Set directories to pass through to the public folder
   config.addPassthroughCopy('./src/img/');
