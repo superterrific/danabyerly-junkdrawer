@@ -2,6 +2,16 @@
   --flow-space: 4rem;
   --flow-space: clamp(3.5rem, 2.5vw, 5rem);
   margin-block-start: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--flex-gap, 1rem);
+  list-style: none;
+  padding: 0;
 }
 
 article {

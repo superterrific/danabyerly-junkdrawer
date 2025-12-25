@@ -123,12 +123,6 @@ https://github.com/hankchizljaw/modern-css-reset/blob/master/dist/reset.css  */
   box-sizing: border-box;
 }
 
-/* Remove default padding */
-ul[class],
-ol[class] {
-  padding: 0;
-}
-
 /* Remove default margin */
 body,
 h1,
@@ -148,12 +142,6 @@ html {
   overflow-x: hidden;
   scroll-padding-block-start: 1rem;
   scrollbar-gutter: stable;
-}
-
-/* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
-  list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
@@ -384,6 +372,8 @@ header a {
 .post-summary-list {
   --flow-space: 3rem;
   --flow-space: clamp(2.5rem, 2.5vw, 4rem);
+  list-style: none;
+  padding: 0;
 }
 
 .post-summary-text {
@@ -439,6 +429,8 @@ header a {
   flex-wrap: wrap;
   align-items: flex-start;
   margin-block: .75rem;
+  list-style: none;
+  padding: 0;
 }
 
 .tag-list > * {
