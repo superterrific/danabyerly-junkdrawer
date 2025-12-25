@@ -106,13 +106,19 @@ hr {
   margin-block-start: 1rem;
   font-size: 1.1rem;
   font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+  padding-inline-start: 2.5rem;
 }
 
-.reading li > ul {
+.wp-block-list li {
+  list-style: disc;
+}
+
+.wp-block-list  li > ul {
   margin-block-start: .25rem;
+  list-style: circle;
 }
 
-.reading li p {
+.wp-block-list li p {
   line-height: 1.3;
 }
 

@@ -1,6 +1,6 @@
   <li>
     <{{ headingLevel if headingLevel else 'h2' }}><a href="/tv-blurbs/{{ item.title | slugify }}/">{{ item.title }}</a></{{ headingLevel if headingLevel else 'h2' }}>
-    <div class="flex-list post-meta">
+    <div class="flex post-meta">
       {% if item.episode %}
       <p>S{{ item.series }} E{{ item.episode }}</p> 
       {% endif %}

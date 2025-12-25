@@ -1,7 +1,7 @@
 <div class="wrapper show-nav">
   <h2>All Shows</h2>
   <nav aria-label="All shows">
-    <ul class="flex-list" role="list">
+    <ul class="flex" role="list">
       {% for item in shows %}
       <li><a href="/tv-blurbs/{{ item.showname | slugify }}">{{ item.showname }}</a></li>
       {% endfor %}

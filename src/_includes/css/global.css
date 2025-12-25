@@ -169,6 +169,12 @@ img:not([alt]) {
   filter: blur(10px);
 }
 
+ol[class],
+ul[class] {
+  list-style: none;
+  padding: 0;
+}
+
 /* Global ---------------------------------------------------------------- */
 body {
   display: flex;
@@ -372,8 +378,6 @@ header a {
 .post-summary-list {
   --flow-space: 3rem;
   --flow-space: clamp(2.5rem, 2.5vw, 4rem);
-  list-style: none;
-  padding: 0;
 }
 
 .post-summary-text {
@@ -429,8 +433,6 @@ header a {
   flex-wrap: wrap;
   align-items: flex-start;
   margin-block: .75rem;
-  list-style: none;
-  padding: 0;
 }
 
 .tag-list > * {
